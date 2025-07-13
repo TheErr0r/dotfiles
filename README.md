@@ -1,6 +1,6 @@
 # dotfiles
 
-My configuration for Arch Linux, managed by [chezmoi](https://www.chezmoi.io/).
+My fork of [shimeoki's dotfiles](https://github.com/shimeoki/dotfiles) for Arch Linux, managed by [chezmoi](https://www.chezmoi.io/).
 
 ## Table of Contents
 
@@ -51,11 +51,7 @@ My configuration for Arch Linux, managed by [chezmoi](https://www.chezmoi.io/).
 
 ## Description
 
-Every configuration is designed specifically for me and always could change.
-
-At the moment, this repository is not recommended for usage as a drop-in config.
-It needs tinkering and manual setup for many aspects of the system. Also, it's
-not yet templated and contains some user-specific data (e.g. git).
+Current config is not mine. My config will be commited soon.
 
 ### Display
 
