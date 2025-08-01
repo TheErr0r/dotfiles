@@ -1,9 +1,11 @@
 @import "mocha.css";
+@import url("/home/error/.cache/wal/colors-waybar.css");
 
 * {
     /* only nerd fonts because of the icons */
-    font-family: "RobotoMono Nerd Font";
-    /* font-family: "FiraCode Nerd Font" */
+    /* font-family: "RobotoMono Nerd Font"; */
+    font-family: "NotoSans Nerd Font Propo";
+    /* font-family: "FiraCode Nerd Font"; */
     font-size: 16px;
     /* below is for fira code font */
     font-feature-settings: "cv02, cv11, cv25, cv26, cv32, cv28, ss04, ss06, ss07";
@@ -11,48 +13,162 @@
 
 window#waybar {
     background-color: rgba(0, 0, 0, 0);
+    all:unset;
+}
+
+#workspaces {
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+
+    color: @color3;
+    background-color: @background;
+
+    /* border-radius: 10px; */
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 12px;
+}
+
+/* less than in #workspaces by 1 because some pixels are showing up idk why */
+#workspaces button.active {
+    /* padding: 0px 0px 0px 0px; */
+    /* margin: 0px 0px 0px 0px; */
+
+    color: @color0;
+    background-color: @color3;
+
+    /* border-radius: 10px; */
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.modules-left {
+    /* font-family: "Noto Sans"; */
+
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+
+    color: @color3;
+    background-color: @background;
+
+    /* border-radius: 12px; */
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+#cava {
+    /* font-family: "RobotoMono Nerd Font"; */
+    font-family: "FiraCode Nerd Font";
+    font-size: 26px;
+
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px -18px;
+}
+
+.modules-center {
+    font-family: "RobotoMono Nerd Font";
+
+    padding: 10px 0px;
+    margin: 0px 0px 0px 0px;
+
+    color: @color3;
+    background-color: @background;
+
+    /* border-radius: 12px; */
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+#clock {
+    font-family: "NotoSans Nerd Font Propo";
+
+    padding: 0px 5px 0px 5px;
+    margin: 0px 0px 0px 0px;
+    font-size: 24px;
+
+    color: @color3;
+    background-color: @background;
+
+    /* border-radius: 12px; */
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+#language,
+#keyboard-state {
+    font-family: "Noto Sans";
+    font-size: 20px;
+
+    padding: 0px 0px 3px 0px;
+    margin: 0px 0px 0px 0px;
+
+    color: @color3;
+    background-color: @background;
+
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+/* .modules-right { */
+#network,
+#wireplumber {
+    /* padding: 0px 0px 0px 0px; */
+    /* margin: 0px 2px 0px 0px; */
+
+    color: @color3;
+    background-color: @background;
+
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+#tray {
+    padding: 8px 0px;
+    margin: 0px 0px 0px 0px;
+
+    color: @color3;
+    background-color: @background;
+
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+tooltip {
+  background: @background;
+  /* border: 1px solid rgba(100, 114, 125, 0.0); */
+  animation-name: tooltip-fill;
+  animation-timing-function: steps(26);
+  animation-duration: 0.1s;
+}
+
+tooltip label {
+  color: @color3;
+}
+
+@keyframes tooltip-fill {
+   from {
+        opacity: 0;
+   }
+   to {
+        opacity: 1;
+   }
 }
 
 /* source: https://github.com/Alexays/Waybar/wiki/Module:-Hyprland#example-3 */
-
 window#waybar.empty #window {
     background-color: transparent;
     border: none;
 }
-
-#workspaces button,
-#clock,
-#battery,
-#language,
-#network,
-#window,
-#backlight,
-#keyboard-state,
-#bluetooth,
-#wireplumber,
-#cava {
-    background-color: @base;
-    color: @text;
-
-    padding: 6px 16px;
-    margin: 0 4px;
-
-    border: 1px solid alpha(@overlay2, 0.5);
-    border-radius: 8px;
-}
-
-#workspaces button.active {
-    color: @green;
-    border-color: @green;
-}
-
-#battery.charging {
-    color: @green;
-    border-color: @green;
-}
-
-#battery.charge-9, #battery.charge-19 {
-    color: @red;
-    border-color: @red;
-}
-
